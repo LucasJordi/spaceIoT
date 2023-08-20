@@ -207,15 +207,12 @@ class SpaceShip {
 
     if(this.spaceShipService.getSett().x>=destiny.x+100){
 
-      this.spaceShipService.getSett().x = destiny.x+100 + 100 * Math.cos(angle) - 150;
-      this.spaceShipService.getSett().y = destiny.y+100 + 100 * Math.sin(angle) - 150;
-      angle += 0.02
+      
       
       
     }else{
       this.spaceShipService.changeVelocity(this.spaceShipService.getVelocity()+increment)
       this.spaceShipService.getSett().x+=increment
-      console.log(this.spaceShipService.getVelocity())
 
 
     }

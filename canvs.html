@@ -1,54 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rotating Images</title>
-<style>
-  canvas {
-    border: 1px solid black;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pip-Boy Interface</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
 </head>
 <body>
-<canvas id="canvas" width="400" height="400"></canvas>
+  <canvas id="canvas" width="800" height="600"></canvas>
 
-<script>
-  const canvas = document.getElementById('canvas');
-  const ctx = canvas.getContext('2d');
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
 
-  const image1 = new Image();
-  const image2 = new Image();
+    function drawPipBoy() {
+      // Background
+      ctx.fillStyle = 'black';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  image1.src = './src/app/assrts/moon.png'; // Replace with the path to your first image
-  image2.src = './src/app/assrts/moon.png'; // Replace with the path to your second image
+      // Interface components
+      ctx.fillStyle = 'white';
+      ctx.font = '20px Arial';
+      ctx.fillText('STATS', 50, 50);
+      ctx.fillText('ITEMS', 50, 100);
+      ctx.fillText('MAP', 50, 150);
+      ctx.fillText('DATA', 50, 200);
 
-  const centerX = canvas.width / 2;
-  const centerY = canvas.height / 2;
-  const radius1 = 50;
-  const radius2 = 20;
-  
-  let angle = 0;
+      // Simulated screen glow
+      ctx.beginPath();
+      ctx.arc(canvas.width - 100, canvas.height - 100, 50, 0, Math.PI * 2);
+      ctx.shadowBlur = 50;
+      ctx.shadowColor = 'white';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+      ctx.fill();
+    }
 
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw the first image
-    ctx.drawImage(image1, centerX - radius1, centerY - radius1, radius1 * 2, radius1 * 2);
-    
-    // Calculate the position of the second image
-    const image2X = centerX + radius1 * Math.cos(angle) - radius2;
-    const image2Y = centerY + radius1 * Math.sin(angle) - radius2;
-    
-    // Draw the second image
-    ctx.drawImage(image2, image2X, image2Y, radius2 * 2, radius2 * 2);
-    
-    angle += 0.02; // Adjust the rotation speed here
-    
-    requestAnimationFrame(draw);
-  }
+    function animate() {
+      drawPipBoy();
+      requestAnimationFrame(animate);
+    }
 
-  draw(); // Start the animation
-</script>
+    animate(); // Start the animation loop
+  </script>
 </body>
 </html>
