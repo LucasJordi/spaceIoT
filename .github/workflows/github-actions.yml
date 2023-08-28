@@ -19,6 +19,6 @@ jobs:
           npm run build
 
       - name: Deploy 🚀
-        uses: LucasJordi/spaceIoT
+        uses: LucasJordi/spaceIoT@v1
         with:
           folder: build # The folder the action should deploy.
