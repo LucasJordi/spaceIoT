@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { IonMenu } from '@ionic/angular';
+
 import { PlanetsRef } from 'src/app/config/planets';
 import { PlanetDTO } from 'src/app/models/Planet.dto';
+import { MenuServiceService } from 'src/app/services/menu-service/menu-service.service';
 import { SpaceShipService } from 'src/app/services/space-shipp/space-ship.service';
 let increment = 0.0005
 @Component({
@@ -11,34 +12,13 @@ let increment = 0.0005
 })
 export class StarFieldComponentComponent implements OnInit, AfterViewInit {
   @ViewChild('space', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
-  @ViewChild('menu', { static: true }) menu!: IonMenu;
-  skills=[
-    {
-      id:1,
-      name:"",
-      img:"assets/skill1.png"
-    },
-    {
-      id:1,
-      name:"",
-      img:"assets/skill2.png"
-    },
-    {
-      id:1,
-      name:"",
-      img:"assets/skill3.png"
-    },
-    {
-      id:1,
-      name:"",
-      img:"assets/skill4.png"
-    }
-  ]
+  
   increment=increment*1000
   private ctx!: CanvasRenderingContext2D;
   private stars: Star[] = [];
   constructor(
-    public spaceShiptService: SpaceShipService
+    public spaceShiptService: SpaceShipService,
+    private menuService:MenuServiceService
   ){
 
   }
@@ -53,7 +33,8 @@ export class StarFieldComponentComponent implements OnInit, AfterViewInit {
   }
 
   toggleMenuShip(){
-    this.menu.open()
+    this.menuService.callOpenMenuShip()
+    
   }
   
   temperature(){

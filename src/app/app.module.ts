@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StarFieldComponentComponent } from './components/star-field-component/star-field-component.component';
 import { IonicModule } from '@ionic/angular';
+import { ShipMenuMonitoringComponent } from './components/ship-menu-monitoring/ship-menu-monitoring.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StarFieldComponentComponent
+    StarFieldComponentComponent,
+    ShipMenuMonitoringComponent
   ],
   imports: [
     BrowserModule,
