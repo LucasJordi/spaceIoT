@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { IonMenu } from '@ionic/angular';
 import { PlanetsRef } from 'src/app/config/planets';
 import { PlanetDTO } from 'src/app/models/Planet.dto';
 import { SpaceShipService } from 'src/app/services/space-shipp/space-ship.service';
-
+let increment = 0.0005
 @Component({
   selector: 'star-field-component',
   templateUrl: './star-field-component.component.html',
@@ -10,6 +11,30 @@ import { SpaceShipService } from 'src/app/services/space-shipp/space-ship.servic
 })
 export class StarFieldComponentComponent implements OnInit, AfterViewInit {
   @ViewChild('space', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('menu', { static: true }) menu!: IonMenu;
+  skills=[
+    {
+      id:1,
+      name:"",
+      img:"assets/skill1.png"
+    },
+    {
+      id:1,
+      name:"",
+      img:"assets/skill2.png"
+    },
+    {
+      id:1,
+      name:"",
+      img:"assets/skill3.png"
+    },
+    {
+      id:1,
+      name:"",
+      img:"assets/skill4.png"
+    }
+  ]
+  increment=increment*1000
   private ctx!: CanvasRenderingContext2D;
   private stars: Star[] = [];
   constructor(
@@ -17,10 +42,36 @@ export class StarFieldComponentComponent implements OnInit, AfterViewInit {
   ){
 
   }
+  incrementVelocity(){
+    increment+=0.0005
+    this.increment=increment*100000
+  }
+
+  decrementVelocity(){
+    increment-=0.0005
+    this.increment=increment*100000
+  }
+
+  toggleMenuShip(){
+    this.menu.open()
+  }
   
-  
+  temperature(){
+    return (Math.random()+(Math.random()*10)+300).toFixed(2)
+  }
+  temperatureT="300.00"
+  fuel=100
 
   ngAfterViewInit(): void {
+    setInterval(()=>{
+      this.temperatureT=this.temperature()
+      this.fuel-=Math.random()
+      if(this.fuel<=0){
+        this.fuel=0
+      }
+      
+    },2000)
+    
     this.ctx = this.canvasRef.nativeElement.getContext('2d') as CanvasRenderingContext2D;
     this.resizeCanvas();
     
@@ -59,6 +110,10 @@ export class StarFieldComponentComponent implements OnInit, AfterViewInit {
           planet.function()
           break;
 
+        }
+        if(x<=this.spaceShiptService.getSett().x+this.spaceShiptService.getSett().width && (y>=this.spaceShiptService.getSett().y && y<=this.spaceShiptService.getSett().y+this.spaceShiptService.getSett().height)){
+          this.toggleMenuShip()
+          break;
         }
       }
       
@@ -201,7 +256,7 @@ class SpaceShip {
   }
   move(): void {
     const destiny = this.spaceShipService.getDestiny()
-    const increment = 0.005
+    
     
 
 
