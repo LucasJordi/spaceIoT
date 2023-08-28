@@ -16,6 +16,6 @@ jobs:
         run: |
           npm install -g @angular/cli
           npm install
-          ng build --prod --base-href "https://LucasJordi.github.io/spaceIoT/"
+          ng build --base-href "https://LucasJordi.github.io/spaceIoT/"
 
       
