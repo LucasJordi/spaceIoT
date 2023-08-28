@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Build and deploy SpaceIoT
 run-name: ${{ github.actor }} is deploy GitHub Actions 🚀
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
         run: |
           npm i @angular/cli
           npm install
-          npm run build
+          ng build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
