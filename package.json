@@ -1,7 +1,7 @@
 {
   "name": "space-io-t",
   "version": "0.0.4",
-  "homepage": "https://Lucasjordi.github.io/spaceIoT",
+  "homepage": "https://lucasjordi.github.io/spaceIoT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
