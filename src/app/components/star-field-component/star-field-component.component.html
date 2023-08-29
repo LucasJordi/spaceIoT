@@ -1,6 +1,10 @@
 <canvas #space>
 </canvas>
-<ship-menu-monitoring 
+<splash-screen>
+    
+</splash-screen>
+<ship-menu-monitoring
+    *ngIf="menu=='ship'"
     (decrementT)="decrementVelocity()" 
     (incrementT)="incrementVelocity()" 
     [temperatureT]="temperatureT" 
@@ -9,3 +13,10 @@
     >
 
 </ship-menu-monitoring>
+
+<planet-menu-monitoring
+    [planet]="selectPlanet"
+    *ngIf="menu=='planet'"
+>
+
+</planet-menu-monitoring>

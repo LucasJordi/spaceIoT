@@ -7,13 +7,15 @@ import { StarFieldComponentComponent } from './components/star-field-component/s
 import { IonicModule } from '@ionic/angular';
 import { ShipMenuMonitoringComponent } from './components/ship-menu-monitoring/ship-menu-monitoring.component';
 import { PlanetMenuMonitoringComponent } from './components/planet-menu-monitoring/planet-menu-monitoring.component';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StarFieldComponentComponent,
     ShipMenuMonitoringComponent,
-    PlanetMenuMonitoringComponent
+    PlanetMenuMonitoringComponent,
+    SplashScreenComponent
   ],
   imports: [
     BrowserModule,

@@ -31,9 +31,39 @@ export class StarFieldComponentComponent implements OnInit, AfterViewInit {
     increment-=0.0005
     this.increment=increment*100000
   }
+  menu="null"
+  loading=false
 
   toggleMenuShip(){
-    this.menuService.callOpenMenuShip()
+    this.loading=true
+    new Promise((resolve,reject)=>{
+      this.menu="ship"
+      setTimeout(()=>{
+        resolve(()=>this.menu="ship")
+        this.loading=false
+
+      },100)
+    })
+    .then(()=>{
+      this.menuService.callOpenMenuShip()
+    })
+    
+  }
+  selectPlanet:PlanetDTO=PlanetsRef[0]
+  toggleMenuPlanet(){
+    this.loading=true
+
+    new Promise((resolve,reject)=>{
+      this.menu="planet"
+      setTimeout(()=>{
+        resolve(()=>this.menu="planet")
+        this.loading=false
+      },100)
+
+    })
+    .then(()=>{
+      this.menuService.callOpenMenuPlanet()
+    })
     
   }
   
@@ -89,6 +119,8 @@ export class StarFieldComponentComponent implements OnInit, AfterViewInit {
       for(const planet of PlanetsRef){
         if(x>=planet.x && x<=planet.x+planet.width && (y>=planet.y && y<=planet.y+planet.height)){
           planet.function()
+          this.selectPlanet=planet
+          this.toggleMenuPlanet()
           break;
 
         }
