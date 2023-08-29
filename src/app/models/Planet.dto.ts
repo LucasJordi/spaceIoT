@@ -6,5 +6,13 @@ export interface PlanetDTO{
     width:number,
     height:number,
     function:Function,
-    image:string
+    image:string,
+    data?:Data[]
 }
+
+interface Data{
+    name:string,
+    value:string|string[]
+
+}
+

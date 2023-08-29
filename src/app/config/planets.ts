@@ -9,7 +9,30 @@ export const PlanetsRef:PlanetDTO[]=[
         width:100,
         height:100,
         function:()=>console.log("this?.id"),
-        image:"assets/earth.png"
+        image:"assets/earth.png",
+        data:[
+            {
+                name:"Gravity",
+                value:"10,44 m/s²",    
+            },
+            {
+                name:"Orbital Period",
+                value:"29 years",
+            },
+            {
+                name:"Radius",
+                value: "58.232 km",    
+            },
+            {
+                name:"Moons",
+                value:[ "Titã", "Encélado", "Mimas", "Dione", "Jápeto", "Tétis" ],
+            },
+            {
+                name:"Sun Distance",
+                value:"1,434 × 10^9 km"
+    
+            }
+        ]
     },
     {
         id:"1",    
@@ -19,7 +42,30 @@ export const PlanetsRef:PlanetDTO[]=[
         width:30,
         height:30,
         function:()=>console.log("2"),
-        image:"assets/moon.png"
+        image:"assets/moon.png",
+        data:[
+            {
+                name:"Gravity",
+                value:"10,44 m/s²",    
+            },
+            {
+                name:"Orbital Period",
+                value:"29 years",
+            },
+            {
+                name:"Radius",
+                value: "58.232 km",    
+            },
+            {
+                name:"Moons",
+                value:[ "Titã", "Encélado", "Mimas", "Dione", "Jápeto", "Tétis" ],
+            },
+            {
+                name:"Sun Distance",
+                value:"1,434 × 10^9 km"
+    
+            }
+        ]
     },
     {
         id:"2",    
@@ -29,7 +75,30 @@ export const PlanetsRef:PlanetDTO[]=[
         width:80,
         height:80,
         function:()=>console.log("3"),
-        image:"assets/mars.png"
+        image:"assets/mars.png",
+        data:[
+            {
+                name:"Gravity",
+                value:"10,44 m/s²",    
+            },
+            {
+                name:"Orbital Period",
+                value:"29 years",
+            },
+            {
+                name:"Radius",
+                value: "58.232 km",    
+            },
+            {
+                name:"Moons",
+                value:[ "Titã", "Encélado", "Mimas", "Dione", "Jápeto", "Tétis" ],
+            },
+            {
+                name:"Sun Distance",
+                value:"1,434 × 10^9 km"
+    
+            }
+        ]
     },
     {
         id:"3",    
@@ -39,7 +108,30 @@ export const PlanetsRef:PlanetDTO[]=[
         width:200,
         height:200,
         function:()=>console.log("4"),
-        image:"assets/jupiter.png"
+        image:"assets/jupiter.png",
+        data:[
+            {
+                name:"Gravity",
+                value:"10,44 m/s²",    
+            },
+            {
+                name:"Orbital Period",
+                value:"29 years",
+            },
+            {
+                name:"Radius",
+                value: "58.232 km",    
+            },
+            {
+                name:"Moons",
+                value:[ "Titã", "Encélado", "Mimas", "Dione", "Jápeto", "Tétis" ],
+            },
+            {
+                name:"Sun Distance",
+                value:"1,434 × 10^9 km"
+    
+            }
+        ]
     },
     {
         id:"4",    
@@ -49,7 +141,30 @@ export const PlanetsRef:PlanetDTO[]=[
         width:300,
         height:300,
         function:()=>console.log("5"),
-        image:"assets/saturn.png"
+        image:"assets/saturn.png",
+        data:[
+            {
+                name:"Gravity",
+                value:"10,44 m/s²",    
+            },
+            {
+                name:"Orbital Period",
+                value:"29 years",
+            },
+            {
+                name:"Radius",
+                value: "58.232 km",    
+            },
+            {
+                name:"Moons",
+                value:[ "Titã", "Encélado", "Mimas", "Dione", "Jápeto", "Tétis" ],
+            },
+            {
+                name:"Sun Distance",
+                value:"1,434 × 10^9 km"
+    
+            }
+        ]
     },
     
 ]
