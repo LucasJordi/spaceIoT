@@ -23,7 +23,7 @@ jobs:
           npm install gh-pages --save-dev
           npm install -g @angular/cli
           npm install
-          npm run build
+          ng build --base-href "https://lucasjordi.github.io/spaceIoT/"
           
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v4
