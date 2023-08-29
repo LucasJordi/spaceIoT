@@ -15,13 +15,13 @@ export class ShipMenuMonitoringComponent implements OnInit{
   @Input() increment:any
   ngOnInit(): void {
     this.menuService.getOpenMenuShip().subscribe(()=>{
+      console.log("oioioi222")
       this.toggleMenuShip()
     })
     
   }
   
   toggleMenuShip(){
-
     this.menu.open()
   }
 
